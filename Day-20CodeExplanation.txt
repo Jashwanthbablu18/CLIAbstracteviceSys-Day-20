@@ -1,0 +1,40 @@
+This is a  program  which was designed as part of my "30-Day Python Challenge." 
+
+1. Importing Modules:
+   - The code imports ABC and abstractmethod from the abc module. These are used to create abstract base classes in Python.
+
+2. Device:
+   - Device is an abstract base class that inherits from ABC. It defines a template for other device classes.
+   - The __init__ method initializes the brand attribute for any device.
+   - turn_on() and specs() are abstract methods, meaning any subclass must implement these methods.
+   - intro is a concrete method that displays the brand of the device.
+
+3. Phone:
+   - Phone is a subclass of Device that represents a phone.
+   - The __init__ method calls the base class's constructor using super().__init__(brand) to initialize the brand. It also initializes 
+     additional attributes: os (operating system) and sim_slots.
+   - The turn_on() method provides implementation specific to phones, simulating booting up.
+   - The specs() method provides details about the phone's operating system and SIM slots.
+
+4. Laptop:
+   - Laptop is subclass of Device class.
+   - Similar to Phone, it uses super() to initialize the base class's attributes and adds its own: processor and ram.
+   - The turn_on() method simulates powering on a laptop.
+   - The specs() method provides information about the laptop's processor and RAM.
+
+5. Main():
+   - The main() function demonstrates how to use these classes.
+   - It creates an instance of Phone, calls its methods to display its introduction, turn-on message, and specifications.
+   - Similarly, it creates an instance of Laptop and calls its methods.
+
+6. Starting point:
+   - The conditional statement if __name__ == "__main__": ensures that the main() function runs only when the script is executed directly, not when imported as a module.
+
+
+What I've learnt:
+- Abstraction: Abstraction means hiding the internal details and showing only the necessary features. This is implemented using ABC module
+- super(): This is a python's built-in method which is used for calling parent methods from parent class into child class.
+- abstract method: An abstract method is a method that is declared, but does not have a body (no real code inside it). Abstract methods 
+  force the subclasses to provide their own version of the method. means any subclass must implement these methods. 
+- concrete method:  A concrete method is a normal method — it has a full implementation (real code inside it).  means we can use this 
+  method as it is, or override it if we want.
